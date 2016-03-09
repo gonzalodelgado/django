@@ -4,7 +4,7 @@ import datetime
 from django.conf import settings
 from django.utils import dateformat, numberformat, datetime_safe
 from django.utils.importlib import import_module
-from django.utils.encoding import force_str
+from django.utils.encoding import force_text
 from django.utils.functional import lazy
 from django.utils.safestring import mark_safe
 from django.utils.translation import get_language, to_locale, check_for_language
@@ -95,7 +95,7 @@ def get_format(format_type, lang=None, use_l10n=None):
     If use_l10n is provided and is not None, that will force the value to
     be localized (or not), overriding the value of settings.USE_L10N.
     """
-    format_type = force_str(format_type)
+    format_type = force_text(format_type)
     if format_type not in FORMAT_SETTINGS:
         return format_type
     if use_l10n or (use_l10n is None and settings.USE_L10N):
