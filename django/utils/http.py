@@ -7,8 +7,9 @@ import urlparse
 import unicodedata
 from email.utils import formatdate
 
+from django.utils import six
 from django.utils.datastructures import MultiValueDict
-from django.utils.encoding import smart_str, force_unicode
+from django.utils.encoding import smart_str, force_unicode, force_text
 from django.utils.functional import allow_lazy
 
 ETAG_MATCH = re.compile(r'(?:W/)?"((?:\\.|[^"])*)"')
